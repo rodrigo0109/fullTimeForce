@@ -6,10 +6,10 @@ import { CreateQueryDto } from 'src/dto/create-query.dto';
 export class CommitsController {
     constructor(private commitsService: CommitsService) {}
 
-    @Get(':id/:owner')
-    findOne(@Param('id') id:string, @Param('owner') owner:string) {
-        console.log("params que llegan", id, owner)
-        return 'Devuelvo data'
+    @Get(':repo')
+    findAll(@Param('repo') repo:string) {
+        console.log("params que llegan", repo)
+        return this.commitsService.findAll(repo)
     }
 
     @Post()

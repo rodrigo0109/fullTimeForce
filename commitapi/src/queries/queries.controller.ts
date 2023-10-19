@@ -13,7 +13,6 @@ export class QueryController {
 
     @Post()
     create(@Body() body:CreateQueryDto) {
-        console.log("body", body)
         return this.queriesService.create(body)
     }
 
