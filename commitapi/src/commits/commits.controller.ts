@@ -14,6 +14,10 @@ export class CommitsController {
 
     @Post()
     create(@Body() body:CreateQueryDto) {
-        return this.commitsService.create(body)
+        try {
+            return this.commitsService.create(body)
+        } catch (error) {
+            console.log(error)
+        }
     }
 }

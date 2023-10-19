@@ -19,18 +19,14 @@ export class CommitsService {
      }
  
      async create(commitData: CreateQueryDto) {
-        try {
-            const commits = await processCommits(commitData);
-            if(commits && commits.length > 0){
-                const insertedCommits = await this.commitModel.insertMany(commits);
-                console.log("dataaaa", insertedCommits)
-                return insertedCommits;
-            } else {
-                return 'No commits found';
-            }
-        } catch (error) {
-            console.error("Error:", error);    
-        }
+         const commits = await processCommits(commitData);
+         //console.log("dataaaa", commits)
+         if(commits && commits.length > 0){
+             const insertedCommits = await this.commitModel.insertMany(commits);
+             return insertedCommits;
+         } else {
+             throw new Error('No commits found');
+         }
      }
  
 }

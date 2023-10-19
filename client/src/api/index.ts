@@ -22,6 +22,10 @@ export const createQueryRequest = async(query: Query) => {
 }
 
 export const createCommits = async(query: Query) => {
-    const data = axios.post(`${API}/commits`, JSON.stringify(query), headers())
-    return data
+    try {
+        const data = await axios.post(`${API}/commits`, JSON.stringify(query), headers())
+        return data    
+    } catch (error) {
+        console.log('Error: ', error)
+    }
 }

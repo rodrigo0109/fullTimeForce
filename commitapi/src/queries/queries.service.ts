@@ -12,7 +12,7 @@ export class QueriesService {
         return this.queriesModel.find();
      }
 
-    async create(createQuery: CreateQueryDto) {
+    create(createQuery: CreateQueryDto) {
         const newQuery = new this.queriesModel(createQuery);
         return newQuery.save();
     }

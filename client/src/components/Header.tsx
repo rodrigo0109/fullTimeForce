@@ -17,10 +17,12 @@ const Header = () => {
     e.preventDefault()
     console.log(repositoryRequest)
     const commits = await createCommits(repositoryRequest)
-    console.log("RES",commits.data)
-    if(commits.data.length > 0){
+    console.log("RES",commits?.data)
+    if(commits && commits.data.length > 0){
       const res = await createQueryRequest(repositoryRequest)
-      console.log(res)
+      console.log("QUER", res?.data)
+    } else {
+      return console.log("NO SE PUEDE")
     }
   }
 
