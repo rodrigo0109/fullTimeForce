@@ -12,7 +12,7 @@ const RecentActivity = ({setCurrentRepo}:any) => {
            {
                 queriesCreated.length > 0 &&
                 queriesCreated.map((q:any,i:number) => (
-                    <button key={i} className='w-[80%] h-[35px] rounded-md bg-gray-200 hover:bg-blue-600 text-sm' onClick={() => setCurrentRepo(q.repo)}>
+                    <button key={i} className='w-[80%] h-[35px] rounded-md bg-gray-200 hover:bg-blue-600 text-sm mt-2.5' onClick={() => setCurrentRepo(q.repo)}>
                         {q.owner} - {q.repo}
                     </button>
                 ))
