@@ -9,6 +9,15 @@ import { processCommits } from './utils';
 export class CommitsService {
     constructor(@InjectModel(Commit.name) private commitModel: Model<Commit>) {}
 
+    async findAllCommits() {
+        try {
+            const commits = await this.commitModel.find();
+            return commits;
+        } catch (error) {
+            console.error("Error:", error);
+        }
+     }
+
     async findAll(repo: string) {
         try {
             const commits = await this.commitModel.find({ repo: repo });

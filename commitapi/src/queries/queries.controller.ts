@@ -16,6 +16,7 @@ export class QueryController {
         try {
             return await this.queriesService.create(body)
         } catch (error) {
+            console.log("error", error)
             if(error.code === 11000){
                 throw new ConflictException('Query aleady exists')
             }

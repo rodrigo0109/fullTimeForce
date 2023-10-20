@@ -16,9 +16,31 @@ const headers = () => {
     }
 }
 
+export const getQueries = async() => {
+    try {
+        const data = await axios.get(`${API}/queries`, headers())
+        return data    
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const getCommits = async() => {
+    try {
+        const data = await axios.get(`${API}/commits`, headers())
+        return data    
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 export const createQueryRequest = async(query: Query) => {
-    const data = axios.post(`${API}/queries`, JSON.stringify(query), headers())
-    return data
+    try {
+        const data = await axios.post(`${API}/queries`, JSON.stringify(query), headers())
+        return data    
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 export const createCommits = async(query: Query) => {

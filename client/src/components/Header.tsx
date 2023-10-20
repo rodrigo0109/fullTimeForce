@@ -1,9 +1,11 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
 import { createCommits, createQueryRequest } from '../api';
+import { useAppSelector } from '../redux/hooks';
 
 const Header = () => {
 
   const [repositoryRequest, setRepositoryRequest] = useState({owner:'', repo:''})
+  const queriesCreated = useAppSelector((state:any) => state.queries.queries)
 
   const handleInputChange = (e:ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -12,17 +14,21 @@ const Header = () => {
       [name]: value
     })
   }
-  console.log("repo", repositoryRequest)
+
   const handleSubmit = async(e:FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(repositoryRequest)
+    //chequeo si existe la query
+    const queryExist = queriesCreated.some((item:any) => item.owner === repositoryRequest.owner && item.repo === repositoryRequest.repo);
+    if(queryExist) return console.log("ya existe, no hacemos ninguna op a la base")
+    //traigo commits en base a la query
     const commits = await createCommits(repositoryRequest)
-    console.log("RES",commits?.data)
+    console.log("RES",commits)
+    //la query es nueva, pero chequeo que tenga commits para mostrar
     if(commits && commits.data.length > 0){
       const res = await createQueryRequest(repositoryRequest)
-      console.log("QUER", res?.data)
+      console.log("CREO QUERY", res?.data)
     } else {
-      return console.log("NO SE PUEDE")
+      return console.log("No hay commits para mostrar")
     }
   }
 
