@@ -12,6 +12,7 @@ export const processCommits = async(commitData: CreateQueryDto) => {
             repo: commitData.repo,
             avatar: d.author.avatar_url,
             url: d.author.html_url,
+            commitUrl: d.html_url,
             message: d.commit.message,
             date: d.commit.author.date,
             //index: i,
