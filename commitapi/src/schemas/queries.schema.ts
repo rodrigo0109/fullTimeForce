@@ -5,7 +5,6 @@ import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose'
 })
 export class Queries {
     @Prop({
-        unique: true,
         required: true,
         trim: true
     })
