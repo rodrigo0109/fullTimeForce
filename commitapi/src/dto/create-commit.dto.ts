@@ -23,6 +23,10 @@ export class CreateCommitDto {
 
     @IsString()
     @IsNotEmpty()
+    commitUrl: string;
+
+    @IsString()
+    @IsNotEmpty()
     message: string;
 
     @IsString()

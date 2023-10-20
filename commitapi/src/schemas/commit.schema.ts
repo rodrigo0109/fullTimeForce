@@ -33,6 +33,11 @@ export class Commit {
     @Prop({
         required: true,
     })
+    commitUrl: string;
+
+    @Prop({
+        required: true,
+    })
     message: string;
 
     @Prop({
