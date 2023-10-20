@@ -13,7 +13,6 @@ export class CommitsController {
 
     @Get(':repo')
     findAll(@Param('repo') repo:string | null) {
-        //console.log("params que llegan", repo)
         return this.commitsService.findAll(repo)
     }
 
