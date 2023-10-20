@@ -6,7 +6,8 @@ export const processCommits = async(commitData: CreateQueryDto) => {
     try {
         console.log("body", commitData)
         const data:[] = (await axios.get(`https://api.github.com/repos/${commitData.owner}/${commitData.repo}/commits`)).data
-        let dataTransformed:any = data.map((d:any, i:number) => ({
+        console.log("daraaaaaaaaaaaaaaaaaaaa", data)
+        let dataTransformed:any = data.length > 0 && data.map((d:any, i:number) => ({
             sha: d.sha,
             author: d.author.login,
             repo: commitData.repo,
