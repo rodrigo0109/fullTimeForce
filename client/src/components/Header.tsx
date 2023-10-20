@@ -2,7 +2,7 @@ import React, { ChangeEvent, FormEvent, useState } from 'react'
 import { createCommits, createQueryRequest } from '../api';
 import { useAppSelector } from '../redux/hooks';
 
-const Header = () => {
+const Header = ({setCurrentRepo}:any) => {
 
   const [repositoryRequest, setRepositoryRequest] = useState({owner:'', repo:''})
   const queriesCreated = useAppSelector((state:any) => state.queries.queries)
@@ -27,6 +27,7 @@ const Header = () => {
     if(commits && commits.data.length > 0){
       const res = await createQueryRequest(repositoryRequest)
       console.log("CREO QUERY", res?.data)
+      setCurrentRepo(repositoryRequest.repo)
     } else {
       return console.log("No hay commits para mostrar")
     }
