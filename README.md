@@ -44,9 +44,26 @@ A continuación haz click en Code, copiando el link del repositorio para clonarl
 <br>
 <h1>Para instalar 🛠 </h1>
 
-Llegó el momento para instalar nuestro proyecto en tu ordenador.
+Llegó el momento para hacer correr la aplicación.
 
-Abre la consola de tu editor y ejecuta los siguientes comandos.
+Necesitas abrir dos terminales, donde una apuntara a nuestro Front y otra a nuestro back.
+
+La terminal del front debera terminar en la carpeta "client"
+<div align="center">
+
+![image](https://github.com/rodrigo0109/fullTimeForce/assets/74619422/0934d60a-2949-4afd-b921-a0e378aca4f5)
+
+</div>
+
+La terminal del back debera terminar en la carpeta "commitapi"
+<div align="center">
+
+![image](https://github.com/rodrigo0109/fullTimeForce/assets/74619422/d32e82f8-943b-4bce-91a9-6a1aac694a0b)
+
+</div>
+
+
+Luego en ambas terminales deberás ejecutar el siguiente comando
 
 ```
 npm install
@@ -54,28 +71,42 @@ npm install
 
 Con este comando descargamos e instalamos todas las dependencias que utilizamos en el proyecto de forma automática. El tiempo de este proceso depende de tu conexión a internet y del poder del procesamiento de tu ordenador, ten paciencia, puede tardar unos minutos.
 
-Después, necesitarás crear un archivo bajo el nombre ".env" (sin comillas) con la siguiente información:
+Después, necesitarás crear un archivo bajo el nombre ".env" (sin comillas) en ambas carpetas (client y commitapi):
+
+El archivo .env de la carpeta client contendrá las siguientes variables:
 
 ```
-# FOR DEVELOPMENT
-REACT_APP_API_URL_LOCAL=
+VITE_SERVER=
+VITE_APP_AUTH0_DOMAIN=
+VITE_APP_AUTH0_CLIENT_ID=
 
-# AUTH0
-REACT_APP_AUTH0_DOMAIN=
-REACT_APP_AUTH0_CLIENT_ID=
+```
+
+El archivo .env de la carpeta commitapi contendrá la siguiente variable:
+
+```
+MONGODB_URI=
+
 ```
 Los valores que irán dentro de cada variable serán enviados por correo electrónico, ya que es información sensible.
 <br>
 <br>
 
 
-Luego, para iniciar la aplicación en tu navegador deberás ejecutar la siguiente línea de código en consola:
+Luego, para iniciar la aplicación en tu navegador deberás ejecutar la siguiente línea de código en la terminal del frontend (client):
 
 ```
-npm start
+npm run dev
 ```
 
-Este comando busca y ejecuta los scripts contenidos en el archivo que se denomina package.json, automáticamente desplegará la aplicación en su navegador predeterminado por el sistema en la dirección [http://localhost:3000](http://localhost:3000/) , este proceso puede demorar unos minutos.
+
+Deberás hacer algo similar para iniciar el servidor, ejecuta la siguiente línea de código en la terminal del backend (commitapi):
+
+```
+npm run start:dev
+```
+
+Estos comandos ejecutan los scripts contenidos en el archivo que se denomina package.json, luego de esto deberias tener el backend listo y el frontend levantado en el navegador.
 
 Puedes realizar cambios en el código, y al ser guardados notarás que tu navegador se refrescará con los mismos.
 
