@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
-import { createCommits, createQueryRequest } from '../api';
+import { createCommits, createQueryRequest, getNewCommits } from '../api';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { useAuth0 } from '@auth0/auth0-react';
 import { fetchData } from '../functions';
@@ -25,9 +25,11 @@ const Header = ({setCurrentRepo, setLoading, setAlert}:any) => {
     //chequeo si existe la query
     const queryExist = queriesCreated.some((item:any) => item.owner === repositoryRequest.owner && item.repo === repositoryRequest.repo);
     if(queryExist) {
-      setLoading(false)
       setCurrentRepo(repositoryRequest.repo)
       setRepositoryRequest({owner:'', repo:''})
+      await getNewCommits(repositoryRequest)
+      await fetchData(dispatch)
+      setLoading(false)
       return 
     } 
     //traigo commits en base a la query

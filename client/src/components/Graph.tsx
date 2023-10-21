@@ -4,10 +4,10 @@ import { useAppSelector } from '../redux/hooks'
 import moment from 'moment'
 import { Spinner } from 'flowbite-react'
 
-const Graph = ({currentRepo}:any) => {
+const Graph = ({currentRepo, loading}:any) => {
 
     const queriesCreated = useAppSelector((state:any) => state.queries.queries)
-    const [loading, setLoading] = useState<boolean>(true)
+    const [loadingGraph, setLoadingGraph] = useState<boolean>(true)
     const [series, setSeries] = useState<any>({})
     const [options, setOptions] = useState<any>({
         options: {
@@ -51,6 +51,7 @@ const Graph = ({currentRepo}:any) => {
 
 
     const prepareData = () => {
+        console.log(queriesCreated.filter((q:any) => q.repo === currentRepo))
         const dates = queriesCreated.filter((q:any) => q.repo === currentRepo)[0]?.commits.map((c:any) => moment(c.date).format('MM-DD-YY'))
         let commitsByDate = {}
 
@@ -90,14 +91,14 @@ const Graph = ({currentRepo}:any) => {
                 }
             }
         })
-        setLoading(false)
+        setLoadingGraph(false)
     }
     console.log("sadadsaad",currentRepo)
     useEffect(() => {
-        if(currentRepo !== undefined){
+        if(queriesCreated.filter((q:any) => q.repo === currentRepo)[0]?.commits){
             prepareData()
         }
-    }, [currentRepo])
+    }, [queriesCreated])
     
 
 

@@ -34,5 +34,23 @@ export class CommitsService {
              return insertedCommits;
          }
      }
+
+     async update(commitData: CreateQueryDto) {
+        const newCommits = await processCommits(commitData)
+        if (newCommits && newCommits.length > 0) {
+            // Obtén los shas de los commits existentes en la base de datos
+            const existingCommits = await this.commitModel.find({}, 'sha')
+            const existingShaSet = new Set(existingCommits.map(commit => commit.sha))
+        
+            // Filtra los nuevos commits que no están en la base de datos
+            const newCommitsToInsert = newCommits.filter(commit => !existingShaSet.has(commit.sha))
+        
+            if (newCommitsToInsert.length > 0) {
+              // Inserta los nuevos commits en la base de datos
+              const insertedCommits = await this.commitModel.insertMany(newCommitsToInsert)
+              return insertedCommits
+            }
+          }
+     }
  
 }

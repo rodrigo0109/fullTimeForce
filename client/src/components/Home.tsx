@@ -15,7 +15,7 @@ const Home = () => {
     <div className="w-full h-full">
       <NavBar />
       <Header setCurrentRepo={setCurrentRepo} setLoading={setLoading} setAlert={setAlert} />
-      <Main currentRepo={currentRepo} setCurrentRepo={setCurrentRepo} loading={loading} />
+      <Main currentRepo={currentRepo} setCurrentRepo={setCurrentRepo} loading={loading} setLoading={setLoading} />
       {
         alert &&
         <div className='absolute right-10 bottom-10 z-10' onClick={() => setAlert(false)}>
