@@ -10,21 +10,13 @@ export class CommitsService {
     constructor(@InjectModel(Commit.name) private commitModel: Model<Commit>) {}
 
     async findAllCommits() {
-        try {
-            const commits = await this.commitModel.find()
-            return commits
-        } catch (error) {
-            console.error("Error:", error)
-        }
+        const commits = await this.commitModel.find()
+        return commits
      }
 
     async findAll(repo: string) {
-        try {
-            const commits = await this.commitModel.find({ repo: repo })
-            return commits
-        } catch (error) {
-            console.error("Error:", error)
-        }
+        const commits = await this.commitModel.find({ repo: repo })
+        return commits
      }
  
      async create(commitData: CreateQueryDto) {

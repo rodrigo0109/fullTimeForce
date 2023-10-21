@@ -101,7 +101,7 @@ const Graph = ({currentRepo, loading}:any) => {
 
   return (
     <div id="chart" className='w-1/2 h-full flex flex-col items-center justify-center'>
-        <h3 className='text-[#49AEEA] text-lg font-semibold'>Daily commits</h3>
+        <h3 className='text-[#49AEEA] sm:text-sm 2xl:text-lg font-semibold'>Daily commits</h3>
         <div className='w-[80%] h-full'>
             {
                 loading ?

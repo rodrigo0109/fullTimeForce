@@ -6,7 +6,7 @@ import NoData from './NoData'
 
 const Main = ({currentRepo, setCurrentRepo, loading, setLoading}:any) => {
   return (
-    <div className='w-full h-[500px] flex'>
+    <div className='w-full sm:h-[300px] 2xl:h-[500px] flex'>
       <RecentActivity setCurrentRepo={setCurrentRepo} setLoading={setLoading} />
       {
         currentRepo !== undefined ?
