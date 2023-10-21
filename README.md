@@ -92,6 +92,7 @@ The values that will go into each variable will be sent by e-mail, as it is sens
 
 
 Then, to start the application in your browser, you must execute the following line of code in the frontend (client) terminal:
+Then open a tab in your browser with the url <http://localhost:5173/>
 
 ```
 npm run dev
@@ -123,3 +124,4 @@ Points for improvement:
 - Implement testing.
 - Better way to manage message error response from backend.
 - Dockerization.
+- Deployment.
