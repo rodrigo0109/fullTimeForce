@@ -51,6 +51,7 @@ const Graph = ({currentRepo, loading}:any) => {
 
 
     const prepareData = () => {
+        console.log(queriesCreated.filter((q:any) => q.repo === currentRepo))
         const dates = queriesCreated.filter((q:any) => q.repo === currentRepo)[0]?.commits.map((c:any) => moment(c.date).format('MM-DD-YY'))
         let commitsByDate = {}
 
@@ -94,7 +95,7 @@ const Graph = ({currentRepo, loading}:any) => {
     }
     console.log("sadadsaad",currentRepo)
     useEffect(() => {
-        if(!loading){
+        if(queriesCreated.filter((q:any) => q.repo === currentRepo)[0]?.commits){
             prepareData()
         }
     }, [queriesCreated])

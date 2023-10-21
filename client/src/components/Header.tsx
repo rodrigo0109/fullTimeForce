@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
-import { createCommits, createQueryRequest } from '../api';
+import { createCommits, createQueryRequest, getNewCommits } from '../api';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { useAuth0 } from '@auth0/auth0-react';
 import { fetchData } from '../functions';
@@ -27,7 +27,7 @@ const Header = ({setCurrentRepo, setLoading, setAlert}:any) => {
     if(queryExist) {
       setCurrentRepo(repositoryRequest.repo)
       setRepositoryRequest({owner:'', repo:''})
-      await createCommits(repositoryRequest)
+      await getNewCommits(repositoryRequest)
       await fetchData(dispatch)
       setLoading(false)
       return 

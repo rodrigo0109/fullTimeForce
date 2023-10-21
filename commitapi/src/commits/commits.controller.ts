@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post, Put } from '@nestjs/common';
 import { CommitsService } from './commits.service';
 import { CreateQueryDto } from 'src/dto/create-query.dto';
 
@@ -20,6 +20,15 @@ export class CommitsController {
     create(@Body() body:CreateQueryDto) {
         try {
             return this.commitsService.create(body)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    @Patch()
+    update(@Body() body: CreateQueryDto) {
+        try {
+            return this.commitsService.update(body)
         } catch (error) {
             console.log(error)
         }

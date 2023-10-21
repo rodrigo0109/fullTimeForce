@@ -51,3 +51,12 @@ export const createCommits = async(query: Query) => {
         console.log('Error: ', error)
     }
 }
+
+export const getNewCommits = async(query: Query) => {
+    try {
+        const data = await axios.patch(`${API}/commits`, JSON.stringify(query), headers())
+        return data    
+    } catch (error) {
+        console.log('Error: ', error)
+    }
+}

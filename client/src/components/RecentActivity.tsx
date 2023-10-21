@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAppDispatch, useAppSelector } from '../redux/hooks'
-import { createCommits } from '../api'
+import { getNewCommits } from '../api'
 import { fetchData } from '../functions'
 
 const RecentActivity = ({setCurrentRepo, setLoading}:any) => {
@@ -10,7 +10,7 @@ const RecentActivity = ({setCurrentRepo, setLoading}:any) => {
     const handleUpdate = async(owner:string, repo:string) => {
         setLoading(true)
         setCurrentRepo(repo)
-        await createCommits({owner, repo})
+        await getNewCommits({owner, repo})
         await fetchData(dispatch)
         setLoading(false)
     }

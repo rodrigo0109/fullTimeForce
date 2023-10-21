@@ -12,7 +12,7 @@ const Main = ({currentRepo, setCurrentRepo, loading, setLoading}:any) => {
         currentRepo !== undefined ?
         <>
           <Timeline currentRepo={currentRepo} loading={loading} />
-          {/* <Graph currentRepo={currentRepo} loading={loading} /> */}
+          <Graph currentRepo={currentRepo} loading={loading} />
         </>
         :
         <NoData />
