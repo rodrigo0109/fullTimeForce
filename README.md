@@ -1,14 +1,4 @@
-<br>
-<br>
-<div align="center">
 
-![](./Readme/Aspose.Words.ea102fbd-e677-478a-991b-66b51ee3534b.001.png)
-
-</div>
-
-<p align="justify"> Free Forest es un proyecto grupal que se desarrolló como prueba técnica de la empresa Creditú. El principal requisito a cumplir fue la puesta en escena de un dashboard de consulta de puntos en una aplicación web de un juego hipotético, el cuál también tuvimos que desarrollar conceptualmente y está basado en la concientización del medio ambiente, enfocándonos con profundidad en la forestación, la cual te invitamos a visitarla en el siguiente enlace. </p>  
-
-https://delosandes.xyz/
 
 <br>
 <br>
@@ -46,7 +36,7 @@ A continuación haz click en Code, copiando el link del repositorio para clonarl
 
 <div align="center">
 
-![](./Readme/Aspose.Words.ea102fbd-e677-478a-991b-66b51ee3534b.003.png)
+![image](https://github.com/rodrigo0109/fullTimeForce/assets/74619422/eb3d40a3-5de0-49b6-93ca-78b73ba2265c)
 
 </div>
 
