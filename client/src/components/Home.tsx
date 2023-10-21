@@ -10,7 +10,7 @@ const Home = () => {
     const [currentRepo, setCurrentRepo] = useState()
     const [loading, setLoading] = useState(false)
     const [alert, setAlert] = useState(false)
-    console.log(alert)
+
   return (
     <div className="w-full h-full">
       <NavBar />

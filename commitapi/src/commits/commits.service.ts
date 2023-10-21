@@ -11,26 +11,26 @@ export class CommitsService {
 
     async findAllCommits() {
         try {
-            const commits = await this.commitModel.find();
-            return commits;
+            const commits = await this.commitModel.find()
+            return commits
         } catch (error) {
-            console.error("Error:", error);
+            console.error("Error:", error)
         }
      }
 
     async findAll(repo: string) {
         try {
-            const commits = await this.commitModel.find({ repo: repo });
-            return commits;
+            const commits = await this.commitModel.find({ repo: repo })
+            return commits
         } catch (error) {
-            console.error("Error:", error);
+            console.error("Error:", error)
         }
      }
  
      async create(commitData: CreateQueryDto) {
-         const commits = await processCommits(commitData);
+         const commits = await processCommits(commitData)
          if(commits && commits.length > 0){
-             const insertedCommits = await this.commitModel.insertMany(commits);
+             const insertedCommits = await this.commitModel.insertMany(commits)
              return insertedCommits;
          }
      }
@@ -38,14 +38,14 @@ export class CommitsService {
      async update(commitData: CreateQueryDto) {
         const newCommits = await processCommits(commitData)
         if (newCommits && newCommits.length > 0) {
-            newCommits.sort((a:any, b:any) => a.date.localeCompare(b.date))
             const existingCommits = await this.commitModel.find({}, 'date')
             const existingShaSet = new Set(existingCommits.map(commit => commit.date))
         
             const newCommitsToInsert = newCommits.filter((commit:any) => !existingShaSet.has(commit.date))
         
             if (newCommitsToInsert.length > 0) {
-              const insertedCommits = await this.commitModel.insertMany(newCommitsToInsert)
+              await this.commitModel.insertMany(newCommitsToInsert)
+              const insertedCommits = await this.commitModel.updateMany({}, { $sort: { date: 1 } })
               return insertedCommits
             }
           }
