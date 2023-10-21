@@ -12,7 +12,8 @@ export const queriesReducer = createReducer(initialState, builder => {
     })
     .addCase(saveCommits, (state, action:any) => {
       const commitsByRepo = {}
-      action.payload && action.payload.forEach((commit:any) => {
+      const orderedCommits = action.payload && action.payload.sort((a:any, b:any) => b.date.localeCompare(a.date))
+      orderedCommits.forEach((commit:any) => {
         const { repo } = commit;
         if (!commitsByRepo[repo]) {
           commitsByRepo[repo] = [];
