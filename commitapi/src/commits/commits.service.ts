@@ -38,15 +38,13 @@ export class CommitsService {
      async update(commitData: CreateQueryDto) {
         const newCommits = await processCommits(commitData)
         if (newCommits && newCommits.length > 0) {
-            // Obtén los shas de los commits existentes en la base de datos
+            newCommits.sort((a:any, b:any) => a.date.localeCompare(b.date))
             const existingCommits = await this.commitModel.find({}, 'date')
             const existingShaSet = new Set(existingCommits.map(commit => commit.date))
         
-            // Filtra los nuevos commits que no están en la base de datos
             const newCommitsToInsert = newCommits.filter((commit:any) => !existingShaSet.has(commit.date))
         
             if (newCommitsToInsert.length > 0) {
-              // Inserta los nuevos commits en la base de datos
               const insertedCommits = await this.commitModel.insertMany(newCommitsToInsert)
               return insertedCommits
             }
