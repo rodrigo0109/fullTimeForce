@@ -62,7 +62,7 @@ const Header = ({setCurrentRepo, setLoading, setAlert}:any) => {
               type="text" 
               id="owner" 
               name="owner" 
-              className="block sm:h-[70%] px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-gray-100 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer" 
+              className="block sm:h-[70%] 2xl:h-full px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-gray-100 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer" 
               placeholder=" "
               value={repositoryRequest.owner}
               onChange={handleInputChange} 
@@ -74,7 +74,7 @@ const Header = ({setCurrentRepo, setLoading, setAlert}:any) => {
               type="text" 
               id="repo" 
               name="repo" 
-              className="block sm:h-[70%] px-2.5 pb-2.5 sm:pt-2 2xl:pt-4 w-full text-sm text-gray-900 bg-gray-100 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer" 
+              className="block sm:h-[70%] 2xl:h-full px-2.5 pb-2.5 sm:pt-2 2xl:pt-4 w-full text-sm text-gray-900 bg-gray-100 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer" 
               placeholder=" "
               value={repositoryRequest.repo}
               onChange={handleInputChange} 
