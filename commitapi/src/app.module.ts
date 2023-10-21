@@ -6,7 +6,7 @@ import 'dotenv/config'
 
 @Module({
   imports: [
-    MongooseModule.forRoot(`mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@myatlasclusteredu.eyw7zzd.mongodb.net/`, {
+    MongooseModule.forRoot(`${process.env.MONGODB_URI}`, {
       dbName: 'fullTimeForce'
     }),
     CommitsModule,
