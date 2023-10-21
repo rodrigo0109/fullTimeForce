@@ -1,9 +1,19 @@
 import React from 'react'
-import { useAppSelector } from '../redux/hooks'
+import { useAppDispatch, useAppSelector } from '../redux/hooks'
+import { createCommits } from '../api'
+import { fetchData } from '../functions'
 
-const RecentActivity = ({setCurrentRepo}:any) => {
+const RecentActivity = ({setCurrentRepo, setLoading}:any) => {
 
+    const dispatch = useAppDispatch()
     const queriesCreated = useAppSelector((state:any) => state.queries.queries)
+    const handleUpdate = async(owner:string, repo:string) => {
+        setLoading(true)
+        setCurrentRepo(repo)
+        await createCommits({owner, repo})
+        await fetchData(dispatch)
+        setLoading(false)
+    }
     //console.log(queriesCreated)
   return (
     <div className='w-1/6 h-[60%] rounded-2xl text-center flex flex-col pt-2.5'>
@@ -12,7 +22,7 @@ const RecentActivity = ({setCurrentRepo}:any) => {
            {
                 queriesCreated.length > 0 &&
                 [...queriesCreated].reverse().slice(0,5).map((q:any,i:number) => (
-                    <button key={i} className='w-[80%] h-[35px] rounded-md bg-gray-200 hover:bg-[#49AEEA] text-sm mt-2.5 transition-all duration-300' onClick={() => setCurrentRepo(q.repo)}>
+                    <button key={i} className='w-[80%] h-[35px] rounded-md bg-gray-200 hover:bg-[#49AEEA] text-sm mt-2.5 transition-all duration-300' onClick={() => handleUpdate(q.owner, q.repo)}>
                         {q.owner} - {q.repo}
                     </button>
                 ))

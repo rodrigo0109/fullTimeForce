@@ -4,10 +4,10 @@ import { useAppSelector } from '../redux/hooks'
 import moment from 'moment'
 import { Spinner } from 'flowbite-react'
 
-const Graph = ({currentRepo}:any) => {
+const Graph = ({currentRepo, loading}:any) => {
 
     const queriesCreated = useAppSelector((state:any) => state.queries.queries)
-    const [loading, setLoading] = useState<boolean>(true)
+    const [loadingGraph, setLoadingGraph] = useState<boolean>(true)
     const [series, setSeries] = useState<any>({})
     const [options, setOptions] = useState<any>({
         options: {
@@ -90,14 +90,14 @@ const Graph = ({currentRepo}:any) => {
                 }
             }
         })
-        setLoading(false)
+        setLoadingGraph(false)
     }
     console.log("sadadsaad",currentRepo)
     useEffect(() => {
-        if(currentRepo !== undefined){
+        if(!loading){
             prepareData()
         }
-    }, [currentRepo])
+    }, [queriesCreated])
     
 
 

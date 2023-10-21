@@ -4,15 +4,15 @@ import Timeline from './Timeline'
 import Graph from './Graph'
 import NoData from './NoData'
 
-const Main = ({currentRepo, setCurrentRepo, loading}:any) => {
+const Main = ({currentRepo, setCurrentRepo, loading, setLoading}:any) => {
   return (
     <div className='w-full h-[500px] flex'>
-      <RecentActivity setCurrentRepo={setCurrentRepo} />
+      <RecentActivity setCurrentRepo={setCurrentRepo} setLoading={setLoading} />
       {
         currentRepo !== undefined ?
         <>
           <Timeline currentRepo={currentRepo} loading={loading} />
-          <Graph currentRepo={currentRepo} />
+          {/* <Graph currentRepo={currentRepo} loading={loading} /> */}
         </>
         :
         <NoData />

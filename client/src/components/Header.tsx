@@ -25,9 +25,11 @@ const Header = ({setCurrentRepo, setLoading, setAlert}:any) => {
     //chequeo si existe la query
     const queryExist = queriesCreated.some((item:any) => item.owner === repositoryRequest.owner && item.repo === repositoryRequest.repo);
     if(queryExist) {
-      setLoading(false)
       setCurrentRepo(repositoryRequest.repo)
       setRepositoryRequest({owner:'', repo:''})
+      await createCommits(repositoryRequest)
+      await fetchData(dispatch)
+      setLoading(false)
       return 
     } 
     //traigo commits en base a la query
