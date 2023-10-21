@@ -7,8 +7,8 @@ const Profile = () => {
     //console.log("INFO", user)
   return (
     <div className="flex flex-row items-center">
-        <img className="w-10 h-10 rounded-full" src={user?.picture} alt="Rounded avatar"></img>
-        <span className="ml-2.5 text-white">{user?.nickname}</span>
+        <img className="2xl:w-10 sm:2-5 sm:h-5 2xl:h-10 rounded-full" src={user?.picture} alt="Rounded avatar"></img>
+        <span className="ml-2.5 text-white sm:text-xs">{user?.nickname}</span>
     </div>
   )
 }

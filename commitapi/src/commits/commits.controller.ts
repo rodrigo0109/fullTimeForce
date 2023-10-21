@@ -8,12 +8,20 @@ export class CommitsController {
 
     @Get()
     findAllCommits() {
-        return this.commitsService.findAllCommits()
+        try {
+            return this.commitsService.findAllCommits()
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     @Get(':repo')
     findAll(@Param('repo') repo:string | null) {
-        return this.commitsService.findAll(repo)
+        try {
+            return this.commitsService.findAll(repo)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     @Post()

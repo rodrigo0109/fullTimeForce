@@ -8,7 +8,11 @@ export class QueryController {
 
     @Get()
     findAll() {
-        return this.queriesService.findAll();
+        try {
+            return this.queriesService.findAll();
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     @Post()
@@ -25,6 +29,10 @@ export class QueryController {
 
     @Delete(':id')
     delete(@Param('id') id:string) {
-        return this.queriesService.delete(id)
+        try {
+            return this.queriesService.delete(id)
+        } catch (error) {
+            console.log(error)
+        }
     }
 }

@@ -16,7 +16,7 @@ const NavBar = () => {
     }, [])
 
   return (
-    <div className='w-full h-[60px] flex flex-row items-center justify-between'>
+    <div className='w-full sm:h-[40px] 2xl:h-[60px] flex flex-row items-center justify-between'>
       <div className='ml-5'>
         {
           isAuthenticated &&
