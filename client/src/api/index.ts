@@ -1,7 +1,5 @@
 import axios from "axios"
 
-const API = 'http://localhost:3000'
-
 interface Query {
     owner: string;
     repo: string;
@@ -18,7 +16,7 @@ const headers = () => {
 
 export const getQueries = async() => {
     try {
-        const data = await axios.get(`${API}/queries`, headers())
+        const data = await axios.get(`${import.meta.env.VITE_SERVER}/queries`, headers())
         return data    
     } catch (error) {
         console.log(error)
@@ -27,7 +25,7 @@ export const getQueries = async() => {
 
 export const getCommits = async() => {
     try {
-        const data = await axios.get(`${API}/commits`, headers())
+        const data = await axios.get(`${import.meta.env.VITE_SERVER}/commits`, headers())
         return data    
     } catch (error) {
         console.log(error)
@@ -36,7 +34,7 @@ export const getCommits = async() => {
 
 export const createQueryRequest = async(query: Query) => {
     try {
-        const data = await axios.post(`${API}/queries`, JSON.stringify(query), headers())
+        const data = await axios.post(`${import.meta.env.VITE_SERVER}/queries`, JSON.stringify(query), headers())
         return data    
     } catch (error) {
         console.log(error)
@@ -45,7 +43,7 @@ export const createQueryRequest = async(query: Query) => {
 
 export const createCommits = async(query: Query) => {
     try {
-        const data = await axios.post(`${API}/commits`, JSON.stringify(query), headers())
+        const data = await axios.post(`${import.meta.env.VITE_SERVER}/commits`, JSON.stringify(query), headers())
         return data    
     } catch (error) {
         console.log('Error: ', error)
@@ -54,7 +52,7 @@ export const createCommits = async(query: Query) => {
 
 export const getNewCommits = async(query: Query) => {
     try {
-        const data = await axios.patch(`${API}/commits`, JSON.stringify(query), headers())
+        const data = await axios.patch(`${import.meta.env.VITE_SERVER}/commits`, JSON.stringify(query), headers())
         return data    
     } catch (error) {
         console.log('Error: ', error)

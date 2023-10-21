@@ -22,7 +22,7 @@ const Header = ({setCurrentRepo, setLoading, setAlert}:any) => {
   const handleSubmit = async(e:FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
-    //chequeo si existe la query
+    //if query alrready exist
     const queryExist = queriesCreated.some((item:any) => item.owner === repositoryRequest.owner && item.repo === repositoryRequest.repo);
     if(queryExist) {
       setCurrentRepo(repositoryRequest.repo)
@@ -32,9 +32,8 @@ const Header = ({setCurrentRepo, setLoading, setAlert}:any) => {
       setLoading(false)
       return 
     } 
-    //traigo commits en base a la query
     const commits = await createCommits(repositoryRequest)
-    //la query es nueva, pero chequeo que tenga commits para mostrar
+    //the query is new, but checks if there are commits to show
     if(commits && commits.data.length > 0){
       const res = await createQueryRequest(repositoryRequest)
       setCurrentRepo(repositoryRequest.repo)
