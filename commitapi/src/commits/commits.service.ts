@@ -28,10 +28,10 @@ export class CommitsService {
      }
  
      async create(commitData: CreateQueryDto) {
-         const commits = await processCommits(commitData)
+         const commits = await processCommits(commitData);
          if(commits && commits.length > 0){
              const insertedCommits = await this.commitModel.insertMany(commits)
-             return insertedCommits;
+             return insertedCommits
          }
      }
 
@@ -44,9 +44,8 @@ export class CommitsService {
             const newCommitsToInsert = newCommits.filter((commit:any) => !existingShaSet.has(commit.date))
         
             if (newCommitsToInsert.length > 0) {
-              await this.commitModel.insertMany(newCommitsToInsert)
-              await this.commitModel.updateMany({}, { $sort: { date: 1 } })
-              return newCommitsToInsert
+              const insertedCommits = await this.commitModel.insertMany(newCommitsToInsert)
+              return insertedCommits
             }
           }
      }
