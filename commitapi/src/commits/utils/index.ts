@@ -15,7 +15,6 @@ export const processCommits = async(commitData: CreateQueryDto) => {
             commitUrl: d.html_url,
             message: d.commit.message,
             date: d.commit.author.date,
-            //index: i,
         }))
         return dataTransformed
     } catch (error) {

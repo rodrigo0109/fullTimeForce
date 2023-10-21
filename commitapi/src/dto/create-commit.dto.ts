@@ -32,8 +32,4 @@ export class CreateCommitDto {
     @IsString()
     @IsNotEmpty()
     date: string;
-
-/*     @IsString()
-    @IsNotEmpty()
-    index: number; */
 }
