@@ -45,8 +45,8 @@ export class CommitsService {
         
             if (newCommitsToInsert.length > 0) {
               await this.commitModel.insertMany(newCommitsToInsert)
-              const insertedCommits = await this.commitModel.updateMany({}, { $sort: { date: 1 } })
-              return insertedCommits
+              await this.commitModel.updateMany({}, { $sort: { date: 1 } })
+              return newCommitsToInsert
             }
           }
      }
