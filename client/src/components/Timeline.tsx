@@ -16,7 +16,7 @@ const Timeline = ({currentRepo, loading}:any) => {
           <ol className="ml-5 w-full absolute top-10 border-l border-gray-600 dark:border-gray-700 flex flex-col items-start justify-center pr-2">
             {
               queriesCreated.filter((q:any) => q.repo === currentRepo)[0]?.commits.length > 0 && 
-              [...queriesCreated.filter((q:any) => q.repo === currentRepo)[0]?.commits].reverse().map((t:any,i:number) => (
+              queriesCreated.filter((q:any) => q.repo === currentRepo)[0]?.commits.map((t:any,i:number) => (
                   <li key={i} className="mb-10 ml-4">
                       <div className="absolute w-3 h-3 bg-gray-600 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
                       <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{moment(t.date).format("MM-DD-YY")}</time>

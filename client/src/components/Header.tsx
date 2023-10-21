@@ -51,9 +51,9 @@ const Header = ({setCurrentRepo, setLoading, setAlert}:any) => {
     <div className='relative w-full h-[300px] flex flex-col items-center pt-10'>
       {
         isAuthenticated ?
-        <h1 className='text-white text-5xl'>Hi <strong className='text-blue-600'>{user?.nickname}</strong>, welcome to <strong className='text-blue-600'>commit</strong> explorer<span className='text-blue-600'>.</span></h1>
+        <h1 className='text-white text-5xl'>Hi <strong className='text-[#49AEEA]'>{user?.nickname}</strong>, welcome to <strong className='text-[#49AEEA]'>commit</strong> explorer<span className='text-[#49AEEA]'>.</span></h1>
         :
-        <h1 className='text-white text-5xl'>Welcome to <strong className='text-blue-600'>commit</strong> explorer<span className='text-blue-600'>.</span></h1>
+        <h1 className='text-white text-5xl'>Welcome to <strong className='text-[#49AEEA]'>commit</strong> explorer<span className='text-[#49AEEA]'>.</span></h1>
       }
       <form className=' w-1/2 m-auto flex flex-row justify-evenly' onSubmit={handleSubmit}>
         <div className="relative w-1/3 px-2">
@@ -66,7 +66,7 @@ const Header = ({setCurrentRepo, setLoading, setAlert}:any) => {
               value={repositoryRequest.owner}
               onChange={handleInputChange} 
             />
-            <label htmlFor="owner" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-tansparent dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Github user</label>
+            <label htmlFor="owner" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-tansparent dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-75 peer-focus:-translate-y-4 left-2">Github user</label>
         </div>
         <div className="relative w-1/3 px-2">
             <input 
@@ -78,9 +78,9 @@ const Header = ({setCurrentRepo, setLoading, setAlert}:any) => {
               value={repositoryRequest.repo}
               onChange={handleInputChange} 
             />
-            <label htmlFor="repo" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-transparent dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Repository name</label>
+            <label htmlFor="repo" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-transparent dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-75 peer-focus:-translate-y-4 left-2">Repository name</label>
         </div>
-        <button type="submit" className="w-1/4 h-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Search</button>
+        <button type="submit" className="w-1/4 h-full text-white bg-[#49AEEA] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 transition-all duration-300">Search</button>
       </form>
     </div>
   )
