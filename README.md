@@ -2,29 +2,25 @@
 
 <br>
 <br>
-<h1> Primeros pasos 🚀 </h1>
+<h1> First steps 🚀 </h1>
 
-Con las siguientes instrucciones podrás poner en funcionamiento nuestro proyecto localmente .
+With the following instructions you will be able to set this project up locally.
 
-**📑    Requerimientos**
+**📑    Requirements**
 
-Para poder poner a correr esta aplicación tendrás que tener instalado en tu ordenador con anterioridad la última versión de NPM y Node, puedes chequear en consola si la tienes instalada haciendo 
+In order to run this application you will need to have the latest version of NPM and Node installed on your computer, you can check in console if you have it installed doing 
 
 ```
 npm -v
 ```
-ó también
+or
 
 ``` 
 node-v
 ```
 
-Sino en el siguiente link puedes descargarla gratuitamente - <https://nodejs.org/es/download/> .
+Or you can download it for free at the following link - <https://nodejs.org/es/download/> .
 
-Luego, deberás ingresar a nuestro repositorio de GitHub:
-https://github.com/delosandesdevs/frontCreditu
-
-Copia el repositorio haciendo click en Fork, así obtendrás una copia del mismo en tu Github.
 
 <div align="center">
 
@@ -32,7 +28,7 @@ Copia el repositorio haciendo click en Fork, así obtendrás una copia del mismo
 
 </div>
 
-A continuación haz click en Code, copiando el link del repositorio para clonarlo localmente mediante gitBash o puedes descargar el Zip para luego descomprimirlo en tu computadora.
+Then click on Code, copy the link to the repository to clone it locally using gitBash or you can download the Zip file and unzip it on your computer.
 
 <div align="center">
 
@@ -42,20 +38,20 @@ A continuación haz click en Code, copiando el link del repositorio para clonarl
 
 <br>
 <br>
-<h1>Para instalar 🛠 </h1>
+<h1>To install 🛠 </h1>
 
-Llegó el momento para hacer correr la aplicación.
+It is time to run the application.
 
-Necesitas abrir dos terminales, donde una apuntara a nuestro Front y otra a nuestro back.
+You need to open two terminals, where one will point to our Front and the other to our back.
 
-La terminal del front debera terminar en la carpeta "client"
+The address of the front end terminal should end in the "client" folder.
 <div align="center">
 
 ![image](https://github.com/rodrigo0109/fullTimeForce/assets/74619422/0934d60a-2949-4afd-b921-a0e378aca4f5)
 
 </div>
 
-La terminal del back debera terminar en la carpeta "commitapi"
+The address of the backend terminal should end in the "commitapi" folder.
 <div align="center">
 
 ![image](https://github.com/rodrigo0109/fullTimeForce/assets/74619422/d32e82f8-943b-4bce-91a9-6a1aac694a0b)
@@ -63,17 +59,17 @@ La terminal del back debera terminar en la carpeta "commitapi"
 </div>
 
 
-Luego en ambas terminales deberás ejecutar el siguiente comando
+Then in both terminals you must execute the following command
 
 ```
 npm install
 ```
 
-Con este comando descargamos e instalamos todas las dependencias que utilizamos en el proyecto de forma automática. El tiempo de este proceso depende de tu conexión a internet y del poder del procesamiento de tu ordenador, ten paciencia, puede tardar unos minutos.
+With this command we download and install all the dependencies we use in the project automatically. The time of this process depends on your internet connection and the processing power of your computer, be patient, it may take a few minutes.
 
-Después, necesitarás crear un archivo bajo el nombre ".env" (sin comillas) en ambas carpetas (client y commitapi):
+Next, you will need to create a file under the name ".env" (without quotes) in both folders (client and commitapi):
 
-El archivo .env de la carpeta client contendrá las siguientes variables:
+The .env file in the client folder will contain the following variables:
 
 ```
 VITE_SERVER=
@@ -82,84 +78,33 @@ VITE_APP_AUTH0_CLIENT_ID=
 
 ```
 
-El archivo .env de la carpeta commitapi contendrá la siguiente variable:
+The .env file in the commitapi folder will contain the following variable:
 
 ```
 MONGODB_URI=
 
 ```
-Los valores que irán dentro de cada variable serán enviados por correo electrónico, ya que es información sensible.
+The values that will go into each variable will be sent by e-mail, as it is sensitive information..
 <br>
 <br>
 
 
-Luego, para iniciar la aplicación en tu navegador deberás ejecutar la siguiente línea de código en la terminal del frontend (client):
+Then, to start the application in your browser, you must execute the following line of code in the frontend (client) terminal:
 
 ```
 npm run dev
 ```
 
 
-Deberás hacer algo similar para iniciar el servidor, ejecuta la siguiente línea de código en la terminal del backend (commitapi):
+You will have to do something similar to start the server, run the following line of code in the backend terminal (commitapi):
 
 ```
 npm run start:dev
 ```
 
-Estos comandos ejecutan los scripts contenidos en el archivo que se denomina package.json, luego de esto deberias tener el backend listo y el frontend levantado en el navegador.
+These commands execute the scripts contained in the file named package.json, after that you should have the backend ready and the frontend up in the browser..
 
-Puedes realizar cambios en el código, y al ser guardados notarás que tu navegador se refrescará con los mismos.
+You can make changes to the code, and when they are saved you will notice that your browser will refresh with them.
 
 <br>
 <br>
-<h1>Ahora a navegar 🏄</h1>
-
-- **Home**
-
-Al iniciar la aplicación web te encontrarás con los 10 mejores jugadores de Free Forest.
-
-<div align="center">
-
-![](./Readme/Aspose.Words.ea102fbd-e677-478a-991b-66b51ee3534b.004.png)
-
-</div>
-
-En la barra de navegación encontrarás el botón “INICIAR SESIÓN” , allí se abrirá una ventana de autenticación, la que recomendamos que completes, así podrás acceder a todas las funcionalidades de la app.
-
-<div align="center">
-
-![](./Readme/Aspose.Words.ea102fbd-e677-478a-991b-66b51ee3534b.005.png)
-
-</div>
-
-
-
-
-<img src='./Readme/juano.png' alt="drawing" width="100"/>
-
-
-<div >
-
-- [Ramiro Grisales](<https://github.com/orgs/delosandesdevs/people/orimarselasirg>)
-
-</div>
-
-
-<img src='./Readme/rami.png' alt="drawing" width="100"/>
-
-<div >
-
-- [Rodrigo Pérez](<https://github.com/orgs/delosandesdevs/people/rodrigo0109>)
-
-</div>
-
-
-
-<img src='./Readme/rodri.png' alt="drawing" width="100"/>
-
-
-
-
-
-</div>
-
