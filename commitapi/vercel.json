@@ -1,8 +1,7 @@
 {
     "version":2,
     "env":{
-        "MONGODB_USER": "@mongodb_user",
-        "MONGODB_PASSWORD": "@mongodb_password"
+        "MONGODB_URI": "@mongodb_uri"
     },
     "builds":[
         {
