@@ -119,9 +119,18 @@ In the page you will two fields to search a any public repo by owner and repo na
 
 </div>
 
-Points for improvement:
+<h1> Points for improvement: </h1>
 
 - Implement testing.
 - Better way to manage message error response from backend.
 - Dockerization.
 - Deployment.
+
+<h1> Author </h1>
+
+Rodrigo Perez
+
+- Linkedin: <https://www.linkedin.com/in/rodrigo-perez-full-stack-developer/>
+- Github: <https://github.com/rodrigo0109>
+- Portfolio: <https://main--rodrigoperez.netlify.app/>
+- Twitter: <https://twitter.com/RodriiPerezz>
