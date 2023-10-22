@@ -102,7 +102,7 @@ const Graph = ({currentRepo, loading}:any) => {
   return (
     <div id="chart" className='w-1/2 h-full flex flex-col items-center justify-center'>
         <h3 className='text-[#49AEEA] sm:text-sm 2xl:text-lg font-semibold'>Daily commits</h3>
-        <div className='w-[80%] h-full'>
+        <div className='2xl:w-[80%] sm:w-[450px] h-full'>
             {
                 loading ?
                 <div className='w-full h-full flex items-center justify-center'>
@@ -112,7 +112,7 @@ const Graph = ({currentRepo, loading}:any) => {
                     />
                 </div>
                 :
-                <ReactApexChart options={options.options} series={series.series} type="bar" height={380} />
+                <ReactApexChart options={options.options} series={series.series} type="bar" height={window?.innerWidth < 1300 ? 300 : 400} />
             }
         </div>
     </div>

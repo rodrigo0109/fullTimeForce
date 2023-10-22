@@ -35,7 +35,7 @@ const Header = ({setCurrentRepo, setLoading, setAlert}:any) => {
     const commits = await createCommits(repositoryRequest)
     //the query is new, but checks if there are commits to show
     if(commits && commits.data.length > 0){
-      const res = await createQueryRequest(repositoryRequest)
+      await createQueryRequest(repositoryRequest)
       setCurrentRepo(repositoryRequest.repo)
       await fetchData(dispatch)
       setLoading(false)

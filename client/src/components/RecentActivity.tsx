@@ -14,7 +14,7 @@ const RecentActivity = ({setCurrentRepo, setLoading}:any) => {
         await fetchData(dispatch)
         setLoading(false)
     }
-    //console.log(queriesCreated)
+
   return (
     <div className='w-1/6 h-[60%] rounded-2xl text-center flex flex-col pt-2.5'>
         <h3 className='sm:text-md 2xl:text-2xl text-white tracking-wider'>Recent activity</h3>
