@@ -8,7 +8,6 @@ export const fetchData = async(dispatch:Dispatch) => {
         dispatch(saveQueries(queries.data))
     }
     const allCommits = await getCommits()
-    //console.log("ALL COMMITS", allCommits?.data)
     if(allCommits && allCommits.data.length > 0){
       dispatch(saveCommits(allCommits.data))
   }
