@@ -44,12 +44,6 @@ export class Commit {
         required: true,
     })
     date: string;
-
-/*     @Prop({
-        unique: true,
-        required: true,
-    })
-    index: number; */
 }
 
 export const CommitSchema = SchemaFactory.createForClass(Commit);
