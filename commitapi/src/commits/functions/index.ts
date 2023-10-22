@@ -1,10 +1,8 @@
 import axios from "axios"
-//import { CreateCommitDto } from "src/dto/create-commit.dto"
 import { CreateQueryDto } from "src/dto/create-query.dto"
 
 export const processCommits = async(commitData: CreateQueryDto) => {
     try {
-        console.log("body", commitData)
         const data:[] = (await axios.get(`https://api.github.com/repos/${commitData.owner}/${commitData.repo}/commits?per_page=100`)).data
         let dataTransformed:any = data.length > 0 && data.map((d:any, i:number) => ({
             sha: d.sha,
