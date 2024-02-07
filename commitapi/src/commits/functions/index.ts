@@ -1,5 +1,5 @@
 import axios from "axios"
-import { CreateQueryDto } from "src/dto/create-query.dto"
+import { CreateQueryDto } from "../../dto/create-query.dto"
 
 export const processCommits = async(commitData: CreateQueryDto) => {
     try {

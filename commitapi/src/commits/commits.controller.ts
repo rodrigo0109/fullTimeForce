@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Param, Patch, Post, Put } from '@nestjs/common';
 import { CommitsService } from './commits.service';
-import { CreateQueryDto } from 'src/dto/create-query.dto';
+import { CreateQueryDto } from '../dto/create-query.dto';
 
 @Controller('commits')
 export class CommitsController {

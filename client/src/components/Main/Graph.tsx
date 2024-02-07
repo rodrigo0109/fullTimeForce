@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ReactApexChart from 'react-apexcharts'
-import { useAppSelector } from '../redux/hooks'
+import { useAppSelector } from '../../redux/hooks'
 import moment from 'moment'
 import { Spinner } from 'flowbite-react'
 
@@ -50,7 +50,7 @@ const Graph = ({currentRepo, loading}:any) => {
 
 
     const prepareData = () => {
-        const dates = queriesCreated.filter((q:any) => q.repo === currentRepo)[0]?.commits.map((c:any) => moment(c.date).format('MM-DD-YY'))
+        const dates = queriesCreated.filter((q:any) => q.repo === currentRepo.repo)[0]?.commits.map((c:any) => moment(c.date).format('MM-DD-YY'))
         let commitsByDate = {}
 
         dates && dates.forEach((d:any) => {
@@ -69,7 +69,7 @@ const Graph = ({currentRepo, loading}:any) => {
         setOptions({
             ...options,
             options: {
-                colors: '#49AEEA',
+                colors: '#9e57ff',
                 yaxis: {
                     labels: {
                         style: {
@@ -92,7 +92,7 @@ const Graph = ({currentRepo, loading}:any) => {
     }
 
     useEffect(() => {
-        if(queriesCreated.filter((q:any) => q.repo === currentRepo)[0]?.commits){
+        if(queriesCreated.filter((q:any) => q.repo === currentRepo.repo)[0]?.commits){
             prepareData()
         }
     }, [queriesCreated])
@@ -100,8 +100,8 @@ const Graph = ({currentRepo, loading}:any) => {
 
 
   return (
-    <div id="chart" className='w-1/2 h-full flex flex-col items-center justify-center'>
-        <h3 className='text-[#49AEEA] sm:text-sm 2xl:text-lg font-semibold'>Daily commits</h3>
+    <div id="chart" className='w-full h-[70%] flex flex-col items-center justify-center'>
+        <h3 className='text-[#9e57ff] sm:text-sm 2xl:text-lg font-semibold'>Daily commits</h3>
         <div className='2xl:w-[80%] sm:w-[450px] h-full'>
             {
                 loading ?
@@ -109,6 +109,7 @@ const Graph = ({currentRepo, loading}:any) => {
                     <Spinner
                         aria-label="Extra small spinner example"
                         size="xl"
+                        color="purple"
                     />
                 </div>
                 :
