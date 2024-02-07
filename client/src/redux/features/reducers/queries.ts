@@ -1,8 +1,9 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { saveCommits, saveQueries } from '../actions/queries';
+import { saveCommits, saveQueries, saveEvents } from '../actions/queries';
 
 const initialState:any = {
   queries: [],
+  events: [],
 }; 
 
 export const queriesReducer = createReducer(initialState, builder => {
@@ -25,5 +26,8 @@ export const queriesReducer = createReducer(initialState, builder => {
         commits: commitsByRepo[repo.repo] || [],
       }));
       state.queries = combinedData
+  })
+  .addCase(saveEvents, (state, action) => {
+    state.events = action.payload
   })
 });

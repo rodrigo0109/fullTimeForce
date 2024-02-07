@@ -8,7 +8,7 @@ import { fetchData } from '../functions'
 
 const NavBar = () => {
 
-    const { isAuthenticated } = useAuth0()
+    const { user, isAuthenticated } = useAuth0()
     const dispatch = useAppDispatch()
 
     useEffect(() => {
@@ -17,20 +17,26 @@ const NavBar = () => {
 
   return (
     <div className='w-full sm:h-[40px] 2xl:h-[60px] flex flex-row items-center justify-between'>
+       {
+        isAuthenticated ?
+        <h1 className='text-white sm:text-sm 2xl:text-xl ml-5'>Hi <strong className='text-[#9e57ff]'>{user?.nickname}</strong>, welcome to <strong className='text-[#9e57ff]'>commit</strong> explorer<span className='text-[#9e57ff]'>.</span></h1>
+        :
+        <h1 className='text-white sm:text-sm 2xl:text-xl ml-5'>Welcome to <strong className='text-[#9e57ff]'>commit</strong> explorer<span className='text-[#9e57ff]'>.</span></h1>
+      }
       <div className='ml-5'>
         {
           isAuthenticated &&
           <Profile />
         }
       </div>
-      <div className='w-[120px] h-[70%] mr-5'>
+      {/* <div className='w-[120px] h-[70%] mr-5'>
         {
           !isAuthenticated ?
           <LoginButon />
           :
           <LogoutButton />
         }
-      </div>
+      </div> */}
     </div>
   )
 }

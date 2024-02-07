@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Commit } from '../schemas/commit.schema'
 import { Model } from 'mongoose';
-import { CreateQueryDto } from 'src/dto/create-query.dto';
+import { CreateQueryDto } from '../dto/create-query.dto';
 import { processCommits } from './functions';
 
 @Injectable()

@@ -1,6 +1,6 @@
 import { Body, ConflictException, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { QueriesService } from './queries.service';
-import { CreateQueryDto } from 'src/dto/create-query.dto';
+import { CreateQueryDto } from '../dto/create-query.dto';
 
 @Controller('queries')
 export class QueryController {

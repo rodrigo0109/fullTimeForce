@@ -1,21 +1,36 @@
 import React, { useState } from 'react'
-import NavBar from './NavBar'
-import Header from './Header'
-import Main from './Main'
+import NavBar from '../NavBar'
+import SideBar from '../SideBar'
+import Main from '../Main'
 import { Toast } from 'flowbite-react'
 import { HiExclamation } from 'react-icons/hi'
 
 const Home = () => {
 
     const [currentRepo, setCurrentRepo] = useState()
+    const [repositoryRequest, setRepositoryRequest] = useState({owner:'', repo:''})
     const [loading, setLoading] = useState(false)
     const [alert, setAlert] = useState(false)
 
   return (
     <div className="w-full h-full">
       <NavBar />
-      <Header setCurrentRepo={setCurrentRepo} setLoading={setLoading} setAlert={setAlert} />
-      <Main currentRepo={currentRepo} setCurrentRepo={setCurrentRepo} loading={loading} setLoading={setLoading} />
+      <div className='h-[92%] flex flex-row items-center py-10'>
+        <SideBar 
+            repositoryRequest={repositoryRequest} 
+            setRepositoryRequest={setRepositoryRequest} 
+            setCurrentRepo={setCurrentRepo} 
+            setLoading={setLoading} 
+            setAlert={setAlert} 
+        />
+        <Main 
+            repositoryRequest={repositoryRequest} 
+            currentRepo={currentRepo} 
+            setCurrentRepo={setCurrentRepo} 
+            loading={loading} 
+            setLoading={setLoading} 
+        />
+      </div>
       {
         alert &&
         <div className='absolute right-10 bottom-10 z-10' onClick={() => setAlert(false)}>
