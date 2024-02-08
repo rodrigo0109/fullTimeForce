@@ -13,7 +13,7 @@ const Timeline = ({currentRepo, loading}:any) => {
         !loading ?
         <>
           <h3 className='absolute top-0 text-[#9e57ff] sm:text-md 2xl:text-xl font-semibold'>{currentRepo.repo}</h3>
-          <ol className="ml-5 w-full absolute top-10 border-l border-gray-600 dark:border-gray-700 flex flex-col items-start justify-center pr-2">
+          <ol className="ml-5 w-full absolute top-10 border-l border-[#9e57ff] dark:border-gray-700 flex flex-col items-start justify-center pr-2">
             {
               queriesCreated.filter((q:any) => q.repo === currentRepo.repo)[0]?.commits.length > 0 && 
               queriesCreated.filter((q:any) => q.repo === currentRepo.repo)[0]?.commits.map((t:any,i:number) => (
